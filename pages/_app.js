@@ -7,6 +7,9 @@ function MyApp({ Component, pageProps }) {
     console.log(msg);
   })
   socket.emit('nuevo', 'ola socket')
+  socket.on('db-save', msg =>{
+    console.warn(msg)
+  })
   return <Component {...pageProps} />
 }
 
