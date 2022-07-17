@@ -1,8 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import socketClient from 'socket.io-client'
 export default function Home() {
+  var socket = socketClient('http://localhost:8080')
+  // socket.on('connection', (msg) => {
+  //   console.log(msg);
+  // })
+  socket.on('msg', msg=>{
+    console.log(msg)
+  })
   return (
     <div className={styles.container}>
       <Head>
