@@ -8,16 +8,18 @@ let Icons = {
   Notification,
   ChatOption
 }
-console.log(Icons)
 function Navbar() {
   return (
-    <>
-    <Nav direction="row" background="brand" pad="medium" className="flex justify-center">
-      <Anchor icon={<Icons.Home />} hoverIndicator />
-      <Anchor icon={<Icons.Notification />} hoverIndicator />
-      <Anchor icon={<Icons.ChatOption />} hoverIndicator />
-    </Nav>
-    </>
+    <div className='navbar bg-opacity-30 bg-green-900 rounded-box'>
+      <div className="navbar-center mx-auto">
+        <ul className="menu menu-horizontal">
+          <li className="flex px-8 hover:bg-opacity-30 bg-opacity-0 bg-blue-800 rounded">Item 1</li>
+          <li className="flex px-8 hover:bg-opacity-30 bg-opacity-0 bg-blue-800 rounded">Item 2</li>
+          <li className="flex px-8 hover:bg-opacity-30 bg-opacity-0 bg-blue-800 rounded">Item 3</li>
+          <li className="flex px-8 hover:bg-opacity-30 bg-opacity-0 bg-blue-800 rounded">Item 4</li>
+        </ul>
+      </div>
+    </div>
   )
 }
 

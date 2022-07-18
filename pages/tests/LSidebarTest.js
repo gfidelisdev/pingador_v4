@@ -3,7 +3,7 @@ import LSideBar from '../../components/LSidebar'
 
 function LSidebarTest() {
   return (
-    <div className='container'>
+    <div>
         <LSideBar />
     </div>
   )

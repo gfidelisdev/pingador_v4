@@ -3,6 +3,9 @@ import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
 import socketClient from 'socket.io-client'
+import LSideBar from '../components/LSidebar'
+import RSideBar from '../components/RSidebar'
+import Dashboard from '../components/Dashboard'
 export default function Home() {
   var socket = socketClient('http://localhost:8080')
   socket.on('msg', msg=>{
@@ -17,8 +20,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`container`}>
-        <Navbar />
-
+        <div>
+          <Navbar />
+        </div>
+        <div className="grid grid-cols-6">
+          <div className="col-span-1">
+            <LSideBar />
+          </div>
+          <div className="col-span-4">
+            <Dashboard>
+              <div>
+                creanza
+              </div>
+            </Dashboard>
+          </div>
+          <div className="col-span-1">
+            <RSideBar />
+          </div>
+        </div>
       </main>
     </div>
   )
