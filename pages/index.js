@@ -3,6 +3,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import socketClient from 'socket.io-client'
 export default function Home() {
+  if (typeof window !== 'undefined'){
+    alert('window')
+  }
+
   var socket = socketClient('http://localhost:8080')
   // socket.on('connection', (msg) => {
   //   console.log(msg);
