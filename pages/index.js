@@ -11,6 +11,7 @@ export default function Home() {
   socket.on('msg', msg=>{
     console.log(msg)
   })
+  
 
   return (
     <div className={styles.container}>
