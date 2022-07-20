@@ -10,7 +10,6 @@ let Icons = {
 }
 let theme='dark'
 let style = Styles(theme)
-console.log("🚀 ~ file: index.js ~ line 3 ~ styles", style)
 
 function Navbar() {
 
