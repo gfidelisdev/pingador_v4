@@ -17,8 +17,8 @@ function NetworkPoints() {
     <>
         {networkPointsState.network_points.map(nwp=>{
             return(
-                <div>
-                    <NetworkPointView key={nwp.id} network_point={nwp}/>
+                <div key={nwp.id}>
+                    <NetworkPointView  network_point={nwp}/>
                 </div>
             ) 
         })}
