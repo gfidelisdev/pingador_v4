@@ -1,3 +1,3 @@
 export const data = {
-    ping_events:[]
+    ping_events:[],
 }

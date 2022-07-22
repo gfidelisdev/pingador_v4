@@ -14,15 +14,13 @@ function NetworkPoints() {
     },[networkPointsDispatch])
     
   return (
-    <>
+    <div className="flex flex-wrap w-full justify-around content-between items-center">
         {networkPointsState.network_points.map(nwp=>{
             return(
-                <div key={nwp.id}>
-                    <NetworkPointView  network_point={nwp}/>
-                </div>
+                <NetworkPointView key={nwp.id} network_point={nwp}/>
             ) 
         })}
-    </>
+    </div>
 )
 }
 

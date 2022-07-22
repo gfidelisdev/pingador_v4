@@ -1,10 +1,13 @@
 import React from 'react'
+import {PingEventsProvider} from '../../contexts/PingEventsProvider'
 
 function Dashboard({children}) {
   return (
-    <div className="m-4 p-4">
-        {children}
-    </div>
+    <PingEventsProvider>
+      <div className="m-4 p-4">
+          {children}
+      </div>
+    </PingEventsProvider>
   )
 }
 

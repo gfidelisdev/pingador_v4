@@ -8,7 +8,7 @@ export const reducer = (state, action) => {
         return { ...state, loading: true };
       }
       case types.NETWORK_POINT_STATE: {
-        return { ...state, loading: true };
+        return { ...state, nwp_state: action.payload.nwp_state, loading: true };
       }
     }
   

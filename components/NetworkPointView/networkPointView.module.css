@@ -1,0 +1,12 @@
+.bg-success-color {
+    background-color: green;
+    opacity: 0.5;
+}
+.bg-warning-color {
+    background-color: yellow;
+    opacity: 0.5;
+}
+.bg-danger-color {
+    background-color: red;
+    opacity: 0.5;
+}
