@@ -15,7 +15,7 @@ const NetworkPointView = forwardRef(({ network_point }, ref) => {
   }  
   const getNetworkPointState = async (nwpoint_id) => {
     const lastPingEvents = await fetch(
-      `http://localhost:8080/api/ping_events?nwpoint_id=${nwpoint_id}&limit=10`
+      `http://localhost:8080/api/ping_events?nwpoint_id=${nwpoint_id}&limit=20`
     );
     const pingEvents = await lastPingEvents.json();
     const checkState = function (ping_events) {
@@ -39,7 +39,7 @@ const NetworkPointView = forwardRef(({ network_point }, ref) => {
       if (mockResult>0.3) return 'warning'
       return 'success'
     }
-    let nwp_state = checkState(await pingEvents);
+    let nwp_state = checkState((await pingEvents).slice(-10));
     // let nwp_state = mockCheckState(await pingEvents);
     return {nwp_state, pingEvents};
   };
@@ -81,16 +81,17 @@ const NetworkPointView = forwardRef(({ network_point }, ref) => {
       className={`flex justify-center rounded flex-col
                      p-2 m-2 text-black text-lg
                      uppercase font-bold  
-                     ${styles[bgColor]}`}
+                     ${styles[bgColor]} hover:scale-110`}
       onClick={(e) => showStats(e)}
       onMouseEnter={()=>viewPingEvents(true)}
       onMouseLeave={()=>viewPingEvents(false)}
     >
       <div className="">{network_point.name}</div>
-      <div className={`flex justify-between bg-white ring items-center content-between ${showPingEvents?'':'hidden'}`}>
+      {/* ${showPingEvents?'':'hidden'} */}
+      <div className={`flex justify-between bg-white ring ring-black items-center content-between `}>
         {localPingEvents.map(pe=>{
           return (
-            <span key={pe.id} className={`${styles['bg-'+pe.type+'-color']} w-[10%]`}>&#160;</span>
+            <span key={pe.id} className={`${styles['bg-'+pe.type+'-color']} w-[10%] border-r-[1px] border-gray-600`}>&#160;</span>
           )
         })}
       </div>
