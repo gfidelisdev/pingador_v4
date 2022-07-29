@@ -9,7 +9,7 @@ function NetworkPoints() {
   const { networkPointsState, networkPointsDispatch } = networkPointsContext;
   const nwpView = useRef([])
 
-  var socket = socketClient("http://localhost:8080");
+  var socket = socketClient("http://10.4.7.61:8080");
   socket.on("msg", (msg) => {
     if (typeof window !== 'undefined') {
       nwpView.current.forEach(nwp=>{

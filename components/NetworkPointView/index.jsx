@@ -1,6 +1,7 @@
 import React, { forwardRef, useImperativeHandle, useContext, useEffect, useRef, useState } from "react";
 import { getNetworkPointState } from "../../contexts/PingEventsProvider/actions";
 import { PingEventsContext } from "../../contexts/PingEventsProvider/context";
+import useAxios from "../../hooks/useAxios";
 import styles from "./networkPointView.module.css";
 
 const NetworkPointView = forwardRef(({ network_point }, ref) => {
@@ -14,10 +15,16 @@ const NetworkPointView = forwardRef(({ network_point }, ref) => {
     return network_point.id
   }  
   const getNetworkPointState = async (nwpoint_id) => {
-    const lastPingEvents = await fetch(
-      `http://localhost:8080/api/ping_events?nwpoint_id=${nwpoint_id}&limit=20`
+    console.error('lastpingevents')
+    const lastPingEvents = await useAxios(
+      `/api/ping_events?nwpoint_id=${nwpoint_id}&limit=20`,
+      'get'
     );
-    const pingEvents = await lastPingEvents.json();
+    // const lastPingEvents = await fetch(
+    //   `http://localhost:8080/api/ping_events?nwpoint_id=${nwpoint_id}&limit=20`
+    // );
+    const pingEvents = await lastPingEvents.data;
+    console.error("🚀 ~ file: index.jsx ~ line 27 ~ getNetworkPointState ~ lastPingEvents.data;", lastPingEvents.data)
     const checkState = function (ping_events) {
       let failures = ping_events.filter((pe) => pe.type == "danger");
       if (failures.length == ping_events.length) {

@@ -9,7 +9,7 @@ import Dashboard from "../components/Dashboard";
 import { NetworkPointsProvider } from "../contexts/NetworkPointsProvider";
 import NetworkPoints from "../components/NetworkPoints";
 export default function Home() {
-  var socket = socketClient("http://localhost:8080");
+  var socket = socketClient("http://10.4.7.61:8080");
   socket.on("msg", (msg) => {
     console.log(msg);
   });

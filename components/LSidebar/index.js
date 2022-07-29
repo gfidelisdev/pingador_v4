@@ -14,6 +14,7 @@ import {
 } from "grommet-icons";
 import { loadNetworkPoints } from "../../contexts/NetworkPointsProvider/actions";
 import { NetworkPointsContext } from "../../contexts/NetworkPointsProvider/context";
+import useAxios from "../../hooks/useAxios";
 
 
 const src = "//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80";
@@ -26,10 +27,12 @@ function LSideBar() {
   const {networkPointsState, networkPointsDispatch} = networkPointsContext
   
   useEffect(() => {
-    fetch('http://localhost:8080/api/clusters')
-    .then(data=>data.json())
-    .then(data=>{
-      setClusters([{name:'Todos', id:0},...data])
+    useAxios('/api/clusters', 'get')
+    // fetch('http://localhost:8080/api/clusters')
+    // .then(data=>data.json())
+    .then(result=>{
+      console.log("🚀 ~ file: index.js ~ line 34 ~ useEffect ~ result", result)
+      setClusters([{name:'Todos', id:0},...result.data])
     })
     .catch(error=>{
       console.error(error)

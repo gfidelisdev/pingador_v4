@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import socketClient from 'socket.io-client'
 export default function Home() {
-  var socket = socketClient('http://localhost:8080')
+  var socket = socketClient('http://10.4.7.61:8080')
   // socket.on('connection', (msg) => {
   //   console.log(msg);
   // })
