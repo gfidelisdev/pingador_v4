@@ -1,8 +1,12 @@
 import React from 'react'
+import {PingEventsProvider} from '../../contexts/PingEventsProvider'
+import NetworkPoinsDetails from '../NetworkPointDetails'
 
-function RSidebar() {
+function RSidebar({children}) {
   return (
-    <div>RSidebar</div>
+    <PingEventsProvider>
+      <NetworkPoinsDetails  />
+    </PingEventsProvider>
   )
 }
 

@@ -15,16 +15,11 @@ const NetworkPointView = forwardRef(({ network_point }, ref) => {
     return network_point.id
   }  
   const getNetworkPointState = async (nwpoint_id) => {
-    console.error('lastpingevents')
     const lastPingEvents = await useAxios(
       `/api/ping_events?nwpoint_id=${nwpoint_id}&limit=20`,
       'get'
     );
-    // const lastPingEvents = await fetch(
-    //   `http://localhost:8080/api/ping_events?nwpoint_id=${nwpoint_id}&limit=20`
-    // );
     const pingEvents = await lastPingEvents.data;
-    console.error("🚀 ~ file: index.jsx ~ line 27 ~ getNetworkPointState ~ lastPingEvents.data;", lastPingEvents.data)
     const checkState = function (ping_events) {
       let failures = ping_events.filter((pe) => pe.type == "danger");
       if (failures.length == ping_events.length) {
@@ -57,7 +52,6 @@ const NetworkPointView = forwardRef(({ network_point }, ref) => {
       firstrender = false
       populatePingEvents()
     },
-    
   }))
 
   function populatePingEvents(){

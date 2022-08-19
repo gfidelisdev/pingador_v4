@@ -31,7 +31,6 @@ function LSideBar() {
     // fetch('http://localhost:8080/api/clusters')
     // .then(data=>data.json())
     .then(result=>{
-      console.log("🚀 ~ file: index.js ~ line 34 ~ useEffect ~ result", result)
       setClusters([{name:'Todos', id:0},...result.data])
     })
     .catch(error=>{
@@ -43,7 +42,6 @@ function LSideBar() {
     }
   }, [])
   const changeCluster = (id)=>{
-    console.log(id)
     loadNetworkPoints(networkPointsDispatch, id)
     // fetch(`http://localhost:8080/api/network_points?cluster_id=${id}`)
     // .then(data=>data.json())

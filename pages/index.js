@@ -8,6 +8,8 @@ import RSideBar from "../components/RSidebar";
 import Dashboard from "../components/Dashboard";
 import { NetworkPointsProvider } from "../contexts/NetworkPointsProvider";
 import NetworkPoints from "../components/NetworkPoints";
+import NetworkPoinsDetails from "../components/NetworkPointDetails";
+import { PingEventsProvider } from "../contexts/PingEventsProvider";
 export default function Home() {
   var socket = socketClient("http://10.4.7.61:8080");
   socket.on("msg", (msg) => {
@@ -16,6 +18,8 @@ export default function Home() {
 
   return (
     <NetworkPointsProvider>
+      <PingEventsProvider>
+        
       <div className={styles.container}>
         <Head>
           <title>Pingador V4</title>
@@ -38,11 +42,14 @@ export default function Home() {
               </Dashboard>
             </div>
             <div className="col-span-1">
-              <RSideBar />
+              <RSideBar>
+                
+              </RSideBar>
             </div>
           </div>
         </main>
       </div>
+      </PingEventsProvider>
     </NetworkPointsProvider>
   );
 }
