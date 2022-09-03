@@ -8,8 +8,10 @@ function HooksTest() {
     const fetter = useAxios(`/api/ping_events?nwpoint_id=${network_point.id}&limit=20`,'get')
     const [presentation, setPresentation] = useState([])
     useEffect(() => {
-        fetter.then(result=>{
-            setPresentation(result.data)
+        fetter.then(result => {
+          console.log("🚀 ~ file: HooksTest.js ~ line 12 ~ useEffect ~ result", result)
+            return setPresentation(result.data)
+        	
         })
       return () => {
         setPresentation(null)
