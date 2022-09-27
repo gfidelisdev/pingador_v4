@@ -30,8 +30,6 @@ function NetworkPoints() {
 
   function changeNetworkPointDetails(networkPoint){
     loadPingEvents(pingEventsDispatch, networkPoint)
-    console.log("🚀 ~ file: index.jsx ~ line 33 ~ changeNetworkPointDetails ~ pingEventsDispatch,",  pingEventsState)
-    
   }
 
   return (

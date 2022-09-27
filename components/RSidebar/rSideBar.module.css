@@ -1,0 +1,12 @@
+.rsidebar {
+    display: flex;
+}
+
+.rsidebar::before{
+    content: "";
+    position: relative;
+    width: 2px;
+    height: 100vh;
+    background: red;
+
+}

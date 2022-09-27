@@ -1,9 +1,8 @@
 import React from 'react'
-import NetworkPoints from '../NetworkPoints'
-function Dashboard() {
+function Dashboard({children}) {
   return (
       <div className="m-4 p-4">
-          <NetworkPoints />
+          {children}
       </div>
   )
 }

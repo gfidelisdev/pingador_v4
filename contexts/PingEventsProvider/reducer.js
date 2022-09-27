@@ -2,7 +2,6 @@ import * as types from './types'
 export const reducer = (state, action) => {
     switch (action.type) {
       case types.PING_EVENTS_SUCCESS: {
-        console.log("🚀 ~ file: reducer.js ~ line 7 ~ reducer ~ action.payload", action.payload)
         return { ...state, result: action.payload, loading: false };
       }
       case types.PING_EVENTS_LOADING: {
