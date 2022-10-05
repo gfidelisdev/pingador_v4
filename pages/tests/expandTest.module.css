@@ -1,0 +1,11 @@
+.normal{
+    width: 30vw;
+    height: 100vw;
+    background: red;
+    transition: width 1s 0s linear;
+}
+
+.crescido{
+    width: 80vw;
+    background: blue;
+}

@@ -1,0 +1,17 @@
+.warning {
+    background: yellow;
+}
+
+.danger {
+    background: red;
+}
+
+.success {
+    background: green;
+}
+
+.main{
+    margin-left: 1vw;
+    /* border: 1px solid blue;
+    border-radius: 15px; */
+}

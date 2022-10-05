@@ -29,7 +29,7 @@ function NetworkPoints() {
   }, [networkPointsDispatch]);
 
   function changeNetworkPointDetails(networkPoint){
-    loadPingEvents(pingEventsDispatch, networkPoint)
+    loadPingEvents(pingEventsDispatch, networkPoint, 35)
   }
 
   return (

@@ -1,5 +1,11 @@
+
 .rsidebar {
     display: flex;
+    -webkit-transition: width 1s 0s linear;
+    -moz-transition: width 1s 0s linear;
+    -o-transition: width 1s 0s linear;
+    transition: width 1s 0s linear;
+    background-color: #2a303c;
 }
 
 .rsidebar::before{
@@ -7,6 +13,64 @@
     position: relative;
     width: 2px;
     height: 100vh;
-    background: red;
+    background: slategray;
+    z-index: 9999;
 
+}
+
+
+
+.rsidebarbutton {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    width: 2vw;
+    height: 2vh;
+    transform: translate(-62%, -50%);
+    z-index: 9999;
+    cursor: pointer;
+    border-radius: 2vh;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.expanded {
+    width: 70vw;
+    position: absolute;
+    right: 0px;
+    -webkit-transition: width 1s 0s linear;
+    -moz-transition: width 1s 0s linear;
+    -o-transition: width 1s 0s linear;
+    transition: width 1s 0s linear;
+}
+
+.expanded::before{
+    content: "";
+    position: relative;
+    width: 2px;
+    height: 100vh;
+    background-color: slategray;
+    z-index: 9999;
+
+}
+.normal {
+    width: 40px;
+    height: 40px;
+    background: black;
+    -webkit-transition: all 1s 0s linear;
+    -moz-transition: all 1s 0s linear;
+    -o-transition: all 1s 0s linear;
+    transition: all 1s 0s linear;
+}
+
+.grande {
+    width: 100px;
+    height: 150px;
+    background: white;
+    -webkit-transition: all 1s 0s linear;
+    -moz-transition: all 1s 0s linear;
+    -o-transition: all 1s 0s linear;
+    transition: all 1s 0s linear;
 }
